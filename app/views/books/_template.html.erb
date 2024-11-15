@@ -1,0 +1,15 @@
+<h1>User info</h1>
+
+<%= image_tag current_user.get_profile_image(100, 100) %>
+<h3>name : <%= current_user.name %></h3>
+<h3>introduction : <%= current_user.introduction %></h3>
+
+<h1>New Book</h1>
+
+<%= form_with model:new_book, url:books_path, method: :post do |f| %>
+  <h4>Title</h4>
+  <%= f.text_field :title %>
+  <h4>Opinion</h4>
+  <%= f.text_area :opinion %><br>
+  <%= f.submit 'Create Book' %>
+<% end %>

@@ -1,6 +1,5 @@
 class ApplicationController < ActionController::Base
-
-  before_action :authenticate_user!, except: [:top, :about]
+  
   before_action :configure_permitted_parameters, if: :devise_controller?
 
   def after_sign_in_path_for(resource)
@@ -15,7 +14,7 @@ class ApplicationController < ActionController::Base
     if user_signed_in?
       redirect_to user_path(current_user)
     else
-      redirect_to root_path
+      redirect_to top_path
     end
   end
 
@@ -24,4 +23,5 @@ class ApplicationController < ActionController::Base
   def configure_permitted_parameters
     devise_parameter_sanitizer.permit(:sign_up, keys: [:name, :email])
   end
+
 end

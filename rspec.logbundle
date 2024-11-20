@@ -1,0 +1,78 @@
+
+An error occurred while loading ./exec.
+[31mFailure/Error: __send__(method, file)[0m
+[31m[0m
+[31mLoadError:[0m
+[31m  cannot load such file -- /home/ec2-user/environment/bookers2/exec[0m
+[36m# /home/ec2-user/.rbenv/versions/3.1.2/lib/ruby/gems/3.1.0/gems/rspec-core-3.13.2/lib/rspec/core/configuration.rb:2144:in `load'[0m
+[36m# /home/ec2-user/.rbenv/versions/3.1.2/lib/ruby/gems/3.1.0/gems/rspec-core-3.13.2/lib/rspec/core/configuration.rb:2144:in `load_file_handling_errors'[0m
+[36m# /home/ec2-user/.rbenv/versions/3.1.2/lib/ruby/gems/3.1.0/gems/rspec-core-3.13.2/lib/rspec/core/configuration.rb:1643:in `block in load_spec_files'[0m
+[36m# /home/ec2-user/.rbenv/versions/3.1.2/lib/ruby/gems/3.1.0/gems/rspec-core-3.13.2/lib/rspec/core/configuration.rb:1641:in `each'[0m
+[36m# /home/ec2-user/.rbenv/versions/3.1.2/lib/ruby/gems/3.1.0/gems/rspec-core-3.13.2/lib/rspec/core/configuration.rb:1641:in `load_spec_files'[0m
+[36m# /home/ec2-user/.rbenv/versions/3.1.2/lib/ruby/gems/3.1.0/gems/rspec-core-3.13.2/lib/rspec/core/runner.rb:102:in `setup'[0m
+[36m# /home/ec2-user/.rbenv/versions/3.1.2/lib/ruby/gems/3.1.0/gems/rspec-core-3.13.2/lib/rspec/core/runner.rb:86:in `run'[0m
+[36m# /home/ec2-user/.rbenv/versions/3.1.2/lib/ruby/gems/3.1.0/gems/rspec-core-3.13.2/lib/rspec/core/runner.rb:71:in `run'[0m
+[36m# /home/ec2-user/.rbenv/versions/3.1.2/lib/ruby/gems/3.1.0/gems/rspec-core-3.13.2/lib/rspec/core/runner.rb:45:in `invoke'[0m
+[36m# /home/ec2-user/.rbenv/versions/3.1.2/lib/ruby/gems/3.1.0/gems/rspec-core-3.13.2/exe/rspec:4:in `<top (required)>'[0m
+[36m# /home/ec2-user/.rbenv/versions/3.1.2/bin/rspec:25:in `load'[0m
+[36m# /home/ec2-user/.rbenv/versions/3.1.2/bin/rspec:25:in `<top (required)>'[0m
+[36m# /home/ec2-user/.rbenv/versions/3.1.2/lib/ruby/gems/3.1.0/gems/bundler-2.5.22/lib/bundler/cli/exec.rb:58:in `load'[0m
+[36m# /home/ec2-user/.rbenv/versions/3.1.2/lib/ruby/gems/3.1.0/gems/bundler-2.5.22/lib/bundler/cli/exec.rb:58:in `kernel_load'[0m
+[36m# /home/ec2-user/.rbenv/versions/3.1.2/lib/ruby/gems/3.1.0/gems/bundler-2.5.22/lib/bundler/cli/exec.rb:23:in `run'[0m
+[36m# /home/ec2-user/.rbenv/versions/3.1.2/lib/ruby/gems/3.1.0/gems/bundler-2.5.22/lib/bundler/cli.rb:455:in `exec'[0m
+[36m# /home/ec2-user/.rbenv/versions/3.1.2/lib/ruby/gems/3.1.0/gems/bundler-2.5.22/lib/bundler/vendor/thor/lib/thor/command.rb:28:in `run'[0m
+[36m# /home/ec2-user/.rbenv/versions/3.1.2/lib/ruby/gems/3.1.0/gems/bundler-2.5.22/lib/bundler/vendor/thor/lib/thor/invocation.rb:127:in `invoke_command'[0m
+[36m# /home/ec2-user/.rbenv/versions/3.1.2/lib/ruby/gems/3.1.0/gems/bundler-2.5.22/lib/bundler/vendor/thor/lib/thor.rb:527:in `dispatch'[0m
+[36m# /home/ec2-user/.rbenv/versions/3.1.2/lib/ruby/gems/3.1.0/gems/bundler-2.5.22/lib/bundler/cli.rb:35:in `dispatch'[0m
+[36m# /home/ec2-user/.rbenv/versions/3.1.2/lib/ruby/gems/3.1.0/gems/bundler-2.5.22/lib/bundler/vendor/thor/lib/thor/base.rb:584:in `start'[0m
+[36m# /home/ec2-user/.rbenv/versions/3.1.2/lib/ruby/gems/3.1.0/gems/bundler-2.5.22/lib/bundler/cli.rb:29:in `start'[0m
+[36m# /home/ec2-user/.rbenv/versions/3.1.2/lib/ruby/gems/3.1.0/gems/bundler-2.5.22/exe/bundle:28:in `block in <top (required)>'[0m
+[36m# /home/ec2-user/.rbenv/versions/3.1.2/lib/ruby/gems/3.1.0/gems/bundler-2.5.22/lib/bundler/friendly_errors.rb:117:in `with_friendly_errors'[0m
+[36m# /home/ec2-user/.rbenv/versions/3.1.2/lib/ruby/gems/3.1.0/gems/bundler-2.5.22/exe/bundle:20:in `<top (required)>'[0m
+[36m# /home/ec2-user/.rbenv/versions/3.1.2/bin/bundle:25:in `load'[0m
+[36m# /home/ec2-user/.rbenv/versions/3.1.2/bin/bundle:25:in `<main>'[0m
+[36m# [0m
+[36m#   Showing full backtrace because every line was filtered out.[0m
+[36m#   See docs for RSpec::Configuration#backtrace_exclusion_patterns and[0m
+[36m#   RSpec::Configuration#backtrace_inclusion_patterns for more information.[0m
+
+An error occurred while loading ./rspec.
+[31mFailure/Error: __send__(method, file)[0m
+[31m[0m
+[31mLoadError:[0m
+[31m  cannot load such file -- /home/ec2-user/environment/bookers2/rspec[0m
+[36m# /home/ec2-user/.rbenv/versions/3.1.2/lib/ruby/gems/3.1.0/gems/rspec-core-3.13.2/lib/rspec/core/configuration.rb:2144:in `load'[0m
+[36m# /home/ec2-user/.rbenv/versions/3.1.2/lib/ruby/gems/3.1.0/gems/rspec-core-3.13.2/lib/rspec/core/configuration.rb:2144:in `load_file_handling_errors'[0m
+[36m# /home/ec2-user/.rbenv/versions/3.1.2/lib/ruby/gems/3.1.0/gems/rspec-core-3.13.2/lib/rspec/core/configuration.rb:1643:in `block in load_spec_files'[0m
+[36m# /home/ec2-user/.rbenv/versions/3.1.2/lib/ruby/gems/3.1.0/gems/rspec-core-3.13.2/lib/rspec/core/configuration.rb:1641:in `each'[0m
+[36m# /home/ec2-user/.rbenv/versions/3.1.2/lib/ruby/gems/3.1.0/gems/rspec-core-3.13.2/lib/rspec/core/configuration.rb:1641:in `load_spec_files'[0m
+[36m# /home/ec2-user/.rbenv/versions/3.1.2/lib/ruby/gems/3.1.0/gems/rspec-core-3.13.2/lib/rspec/core/runner.rb:102:in `setup'[0m
+[36m# /home/ec2-user/.rbenv/versions/3.1.2/lib/ruby/gems/3.1.0/gems/rspec-core-3.13.2/lib/rspec/core/runner.rb:86:in `run'[0m
+[36m# /home/ec2-user/.rbenv/versions/3.1.2/lib/ruby/gems/3.1.0/gems/rspec-core-3.13.2/lib/rspec/core/runner.rb:71:in `run'[0m
+[36m# /home/ec2-user/.rbenv/versions/3.1.2/lib/ruby/gems/3.1.0/gems/rspec-core-3.13.2/lib/rspec/core/runner.rb:45:in `invoke'[0m
+[36m# /home/ec2-user/.rbenv/versions/3.1.2/lib/ruby/gems/3.1.0/gems/rspec-core-3.13.2/exe/rspec:4:in `<top (required)>'[0m
+[36m# /home/ec2-user/.rbenv/versions/3.1.2/bin/rspec:25:in `load'[0m
+[36m# /home/ec2-user/.rbenv/versions/3.1.2/bin/rspec:25:in `<top (required)>'[0m
+[36m# /home/ec2-user/.rbenv/versions/3.1.2/lib/ruby/gems/3.1.0/gems/bundler-2.5.22/lib/bundler/cli/exec.rb:58:in `load'[0m
+[36m# /home/ec2-user/.rbenv/versions/3.1.2/lib/ruby/gems/3.1.0/gems/bundler-2.5.22/lib/bundler/cli/exec.rb:58:in `kernel_load'[0m
+[36m# /home/ec2-user/.rbenv/versions/3.1.2/lib/ruby/gems/3.1.0/gems/bundler-2.5.22/lib/bundler/cli/exec.rb:23:in `run'[0m
+[36m# /home/ec2-user/.rbenv/versions/3.1.2/lib/ruby/gems/3.1.0/gems/bundler-2.5.22/lib/bundler/cli.rb:455:in `exec'[0m
+[36m# /home/ec2-user/.rbenv/versions/3.1.2/lib/ruby/gems/3.1.0/gems/bundler-2.5.22/lib/bundler/vendor/thor/lib/thor/command.rb:28:in `run'[0m
+[36m# /home/ec2-user/.rbenv/versions/3.1.2/lib/ruby/gems/3.1.0/gems/bundler-2.5.22/lib/bundler/vendor/thor/lib/thor/invocation.rb:127:in `invoke_command'[0m
+[36m# /home/ec2-user/.rbenv/versions/3.1.2/lib/ruby/gems/3.1.0/gems/bundler-2.5.22/lib/bundler/vendor/thor/lib/thor.rb:527:in `dispatch'[0m
+[36m# /home/ec2-user/.rbenv/versions/3.1.2/lib/ruby/gems/3.1.0/gems/bundler-2.5.22/lib/bundler/cli.rb:35:in `dispatch'[0m
+[36m# /home/ec2-user/.rbenv/versions/3.1.2/lib/ruby/gems/3.1.0/gems/bundler-2.5.22/lib/bundler/vendor/thor/lib/thor/base.rb:584:in `start'[0m
+[36m# /home/ec2-user/.rbenv/versions/3.1.2/lib/ruby/gems/3.1.0/gems/bundler-2.5.22/lib/bundler/cli.rb:29:in `start'[0m
+[36m# /home/ec2-user/.rbenv/versions/3.1.2/lib/ruby/gems/3.1.0/gems/bundler-2.5.22/exe/bundle:28:in `block in <top (required)>'[0m
+[36m# /home/ec2-user/.rbenv/versions/3.1.2/lib/ruby/gems/3.1.0/gems/bundler-2.5.22/lib/bundler/friendly_errors.rb:117:in `with_friendly_errors'[0m
+[36m# /home/ec2-user/.rbenv/versions/3.1.2/lib/ruby/gems/3.1.0/gems/bundler-2.5.22/exe/bundle:20:in `<top (required)>'[0m
+[36m# /home/ec2-user/.rbenv/versions/3.1.2/bin/bundle:25:in `load'[0m
+[36m# /home/ec2-user/.rbenv/versions/3.1.2/bin/bundle:25:in `<main>'[0m
+[36m# [0m
+[36m#   Showing full backtrace because every line was filtered out.[0m
+[36m#   See docs for RSpec::Configuration#backtrace_exclusion_patterns and[0m
+[36m#   RSpec::Configuration#backtrace_inclusion_patterns for more information.[0m
+
+Finished in 0.00008 seconds (files took 1.85 seconds to load)
+[31m0 examples, 0 failures, 2 errors occurred outside of examples[0m
+

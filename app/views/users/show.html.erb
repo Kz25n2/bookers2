@@ -1,40 +1,86 @@
 
+<div class="container">
+  <div class="row mt-3">
+    <div class="col-md-3">
+      <h2>User info</h2>
 
-<h1>User info</h1>
+      <%= image_tag @user.get_profile_image(100, 100) %>
 
-<%= image_tag @user.get_profile_image(100, 100) %>
-<h3>name : <%= @user.name %></h3>
-<h3>introduction : <%= @user.introduction %></h3>
+      <table class="table">
+        <tbody>
+          <tr>
+            <td><strong>name</strong></td>
+            <td><strong><%= @user.name %></strong></td>
+          </tr>
+          <tr>
+            <td><strong>introduction</strong></td>
+            <td><strong><%= @user.introduction %></strong></td>
+          </tr>
+        </tbody>
+      </table>
 
-<%= link_to 'Edit profile', edit_user_path(@user) %>
+      <div class="row">
+        <%= link_to edit_user_path(@user.id), class:'d-grit gap-2 btn btn-outline-secondary btn-block my-3' do %>
+          <i class="fa-solid fa-user-gear"></i>
+        <% end %>
+      </div>
 
-<h1>New Book</h1>
+      <div class="row">
+        <div class="col">
+          <h2>New book</h2>
+          <%= form_with model:@new_book, url:books_path, method: :post do |f| %>
+            <div class="row">
+              <div class="form-group col-12">
+                <label for="inputName">Title</label>
+                <%= f.text_field :title, class: "form-control" %>
+              </div>
+            </div>
 
-<%= form_with model:@new_book, url:books_path, method: :post do |f| %>
-  <h4>Title</h4>
-  <%= f.text_field :title %>
-  <h4>Opinion</h4>
-  <%= f.text_area :opinion %><br>
-  <%= f.submit 'Create Book' %>
-<% end %>
+            <div class="row">
+              <div class="form-group col-12">
+                <label for="inputName">Opinion</label>
+                <%= f.text_area :opinion, class: "form-control" %>
+              </div>
+            </div>
 
-<h1>Books</h1>
+            <div class="row">
+              <div class="form-group col-12">
+                <%= f.submit 'Create Book', class:'d-grit gap-2 btn btn-success mt-2' %>
+              </div>
+            </div>
+          <% end %>
+        </div>
+      </div>
+    </div>
 
-<table>
-  <thead>
-    <tr>
-      <th>Title</th>
-      <th>Opinion</th>
-    </tr>
-  </thead>
+    <div class="col-md-8 offset-md-1">
+      <h2>Books</h2>
 
-  <tbody>
-    <% @books.each do |book| %>
-      <tr>
-        <td>Title : <%= link_to book.title, "/books/#{book.id}" %></td>
-        <td>Opinion : <%= book.opinion %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+      <table class="table table-hover">
+        <thead>
+          <tr>
+            <th></th>
+            <th>Title</th>
+            <th>Opinion</th>
+          </tr>
+        </thead>
+
+        <tbody>
+          <% @books.each do |book| %>
+            <tr>
+              <td>
+                <%= link_to user_path(book.user_id) do %>
+                  <%= image_tag @user.get_profile_image(75, 75) %>
+                <% end %>
+              </td>
+              <td><%= link_to book.title, "/books/#{book.id}" %></td>
+              <td><%= book.opinion %></td>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
+    </div>
+
+  </div>
+</div>
 

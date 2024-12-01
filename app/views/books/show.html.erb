@@ -59,6 +59,7 @@
               <% end %>
             </td>
             <td><%= @book.opinion %></td>
+            <td>コメント数: <%= @book.book_comments.count %></td>
             <% if @book.user == current_user %>
               <td><%= link_to 'Edit', edit_book_path(@book.id), class:'d-grit gap-2 btn btn-success btn-sm' %></td>
               <td><%= link_to 'Destroy', book_path(@book.id), method: :delete, "data-confirm" => "本当に消しますか？", class:'d-grit gap-2 btn btn-danger btn-sm' %></td>
@@ -66,6 +67,11 @@
           </tr>
         </tbody>
       </table>
+
+      <%= render 'book_comments/index', book:@book %>
+
+      <%= render 'book_comments/form', book:@book, book_comment:@book_comment %>
+
     </div>
   </div>
 </div>

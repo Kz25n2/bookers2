@@ -14,28 +14,8 @@
 
   <div class="row mt-3">
     <div class="col-md-3">
-      <h2>User info</h2>
 
-      <%= image_tag current_user.get_profile_image(100, 100) %>
-      <table class="table">
-        <tbody>
-          <tr>
-            <td><strong>name</strong></td>
-            <td><strong><%= current_user.name %></strong></td>
-          </tr>
-          <tr>
-            <td><strong>introduction</strong></td>
-            <td><strong><%= current_user.introduction %></strong></td>
-          </tr>
-        </tbody>
-      </table>
-
-      <div class="row">
-        <%= link_to edit_user_path(current_user.id), class:'col d-grit gap-2 btn btn-outline-secondary my-3' do %>
-          <i class="fa-solid fa-user-gear"></i>
-        <% end %>
-      </div>
-
+      <%= render 'users/info', user:@user %>
       <%= render 'template', new_book: @new_book %>
     </div>
 

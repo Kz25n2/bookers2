@@ -1,0 +1,48 @@
+<div class="container">
+  <h2>User info</h2>
+
+  <%= image_tag user.get_profile_image(100, 100) %>
+
+  <table class="table">
+    <tbody>
+      <tr>
+        <td><strong>name</strong></td>
+        <td><strong><%= user.name %></strong></td>
+      </tr>
+      <tr>
+        <td><strong>introduction</strong></td>
+        <td><strong><%= user.introduction %></strong></td>
+      </tr>
+      <tr>
+        <td><strong>follows</strong></td>
+        <td><strong>
+          <%= link_to followings_user_path(user) do %>
+            <%= user.followings.count %>
+          <% end %>
+        </strong></td>
+      </tr>
+      <tr>
+        <td><strong>followers</strong></td>
+        <td><strong>
+          <%= link_to followers_user_path(user) do %>
+            <%= user.followers.count %>
+          <% end %>
+        </strong></td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="row">
+    <% if user == current_user %>
+      <%= link_to edit_user_path(@user), class:'col d-grit gap-2 btn btn-outline-secondary my-3' do %>
+        <i class="fa-solid fa-user-gear"></i>
+      <% end %>
+    <% else %>
+      <% if user.is_followed_by?(current_user) %>
+        <%= link_to 'フォロー解除', user_relationships_path(user), method: :delete, class:'btn btn-danger' %>
+      <% else %>
+        <%= link_to 'フォローする', user_relationships_path(user), method: :post, class:'btn btn-success' %>
+      <% end %>
+    <% end %>
+  </div>
+</div>

@@ -1,64 +1,7 @@
 <% if @range == "User" %>
   <h2>Users search for "<%= @word %>"</h2>
-  <table class="table table">
-    <thead>
-      <tr>
-        <th>image</th>
-        <th>name</th>
-        <th></th>
-        <th></th>
-        <th></th>
-        <th></th>
-      </tr>
-    </thead>
-  
-    <tbody>
-      <% @users.each do |user| %>
-        <tr>
-          <td><%= image_tag user.get_profile_image(75, 75) %></td>
-          <td><%= user.name %></td>
-          <td>フォロー数: <%= user.followings.count %></td>
-          <td>フォロワー数: <%= user.followers.count %></td>
-          <% if user == current_user %>
-            <td></td>
-          <% else %>
-            <% if user.is_followed_by?(current_user) %>
-              <td><%= link_to 'フォロー外す', user_relationships_path(user), method: :delete %></td>
-            <% else %>
-              <td><%= link_to 'フォローする', user_relationships_path(user), method: :post %></td>
-            <% end %>
-          <% end %>
-          <td><%= link_to 'Show', user_path(user.id) %></td>
-        </tr>
-      <% end %>
-    </tbody>
-  </table>
+  <%= render 'users/index', users:@users %>
 <% else %>
   <h2>Books search for "<%= @word %>"</h2>
-  <table class="table table-hover">
-    <thead>
-      <tr>
-        <th></th>
-        <th>Title</th>
-        <th>Opinion</th>
-      </tr>
-    </thead>
-  
-    <tbody>
-      <% @books.each do |book| %>
-        <% unless book.nil? %>
-          <tr>
-            <td>
-              <%= link_to user_path(book.user_id) do %>
-                <%= image_tag book.user.get_profile_image(75, 75) %>
-              <% end %>
-            </td>
-            <td><%= link_to book.title, "/books/#{book.id}" %></td>
-            <td><%= book.opinion %></td>
-          </tr>
-        <% end %>
-      <% end %>
-    </tbody>
-  </table>
-
+  <%= render 'books/index', books:@books %>
 <% end %>

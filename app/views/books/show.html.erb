@@ -25,23 +25,13 @@
             </td>
             <td><%= @book.opinion %></td>
 
-            <% if @book.favorited_by?(current_user) %>
-              <td>
-                <%= link_to book_favorites_path(@book), method: :delete, class:'text-danger' do %>
-                  <i class="fa-solid fa-heart"></i>
-                  <%= @book.favorites.count %>
-                <% end %>
-              </td>
-            <% else %>
-              <td>
-                <%= link_to book_favorites_path(@book), method: :post do %>
-                  <i class="fa-solid fa-heart"></i>
-                  <%= @book.favorites.count %>
-                <% end %>
-              </td>
-            <% end %>
-
-            <td>コメント数: <%= @book.book_comments.count %></td>
+            <td id="favorite_<%= @book.id %>">
+              <%= render 'favorites/favorite', book:@book %>
+            </td>
+            
+            <td id="comments_conut">
+              <%= render 'book_comments/comments.count', book:@book %>
+            </td>
             <% if @book.user == current_user %>
               <td><%= link_to 'Edit', edit_book_path(@book.id), class:'d-grit gap-2 btn btn-success btn-sm' %></td>
               <td><%= link_to 'Destroy', book_path(@book.id), method: :delete, "data-confirm" => "本当に消しますか？", class:'d-grit gap-2 btn btn-danger btn-sm' %></td>

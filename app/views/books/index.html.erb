@@ -21,32 +21,8 @@
 
     <div class="col-md-8 offset-md-1">
       <h2>Books</h2>
-
-      <table class="table table-hover">
-        <thead>
-          <tr>
-            <th></th>
-            <th>Title</th>
-            <th>Opinion</th>
-          </tr>
-        </thead>
-
-        <tbody>
-          <% @books.each do |book| %>
-            <% unless book.nil? %>
-              <tr>
-                <td>
-                  <%= link_to user_path(book.user_id) do %>
-                    <%= image_tag book.user.get_profile_image(75, 75) %>
-                  <% end %>
-                </td>
-                <td><%= link_to book.title, "/books/#{book.id}" %></td>
-                <td><%= book.opinion %></td>
-              </tr>
-            <% end %>
-          <% end %>
-        </tbody>
-      </table>
+      <%= render 'index', books:@books %>
+      
     </div>
   </div>
 </div>

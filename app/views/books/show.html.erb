@@ -29,9 +29,9 @@
               <%= render 'favorites/favorite', book:@book %>
             </td>
             
-            <td id="comments_conut">
-              <%= render 'book_comments/comments.count', book:@book %>
-            </td>
+            <td id="comments_count">
+              <%= render 'book_comments/comments_count', book: @book %>
+            <td>
             <% if @book.user == current_user %>
               <td><%= link_to 'Edit', edit_book_path(@book.id), class:'d-grit gap-2 btn btn-success btn-sm' %></td>
               <td><%= link_to 'Destroy', book_path(@book.id), method: :delete, "data-confirm" => "本当に消しますか？", class:'d-grit gap-2 btn btn-danger btn-sm' %></td>
@@ -40,7 +40,9 @@
         </tbody>
       </table>
 
-      <%= render 'book_comments/index', book:@book %>
+      <div id="comments_index">
+        <%= render 'book_comments/index', book: @book %>
+      </div>
 
       <%= render 'book_comments/form', book:@book, book_comment:@book_comment %>
 

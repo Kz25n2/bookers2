@@ -6,14 +6,7 @@
       </div>
 
       <div class="row">
-        <% if @user.errors.any? %>
-          <strong><%= @user.errors.count %> errors prohibited this obj from being saved.</strong>
-          <ul>
-            <% @user.errors.full_messages.each do |message| %>
-              <li><%= message %></li>
-            <% end %>
-          </ul>
-        <% end %>
+        <%= render 'layouts/errors', obj:@user %>
       </div>
           
       <div class="row">

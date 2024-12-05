@@ -4,6 +4,8 @@
       <th></th>
       <th>Title</th>
       <th>Opinion</th>
+      <th></th>
+      <th></th>
     </tr>
   </thead>
 
@@ -18,6 +20,10 @@
           </td>
           <td><%= link_to book.title, "/books/#{book.id}" %></td>
           <td><%= book.opinion %></td>
+          <td id="favorite_<%= book.id %>">
+            <%= render 'favorites/favorite', book:book %>
+          </td>
+          <td><%= render 'book_comments/comments_count', book:book %></td>
         </tr>
       <% end %>
     <% end %>

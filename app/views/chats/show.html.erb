@@ -1,24 +1,26 @@
-<h2 id="room" data-room="<%= @room.id %>" data-user="<%= current_user.id %>"><%= @user.name %>さんとのチャット</h2>
+<div class="ml-3">
+  <h2 id="room" data-room="<%= @room.id %>" data-user="<%= current_user.id %>"><%= @user.name %>さんとのチャット</h2>
 
-<div id="message" style="width: 400px;">
-  <% @chats.each do |chat| %>
-    <% if chat.user_id == current_user %>
-      <%= render 'chats/chat', chat: @chat %>
-    <% else %>
-      <div class="left-container d-flex" %>
-        <%= image_tag @user.get_profile_image(30, 30), style: 'border-radius: 50%' %>
-        <p class="ml-1"><%= @chat.id %></p>
-      </div>
+  <div id="message" style="width: 400px;">
+    <% @chats.each do |chat| %>
+      <% if chat.user_id == current_user.id %>
+        <%= render 'chats/chat', chat: chat %>
+      <% else %>
+        <div class="left-container d-flex mt-2" %>
+          <%= image_tag @user.get_profile_image(30, 30) %>
+          <p class="ml-1 bg-info" style="border-radius: 3px;"><span><%= chat.message %></span></p>
+        </div>
+      <% end %>
     <% end %>
+  </div>
+
+  <div class="errors">
+    <%= render 'layouts/errors', obj:@chat %>
+  </div>
+
+  <%= form_with model:@chat, data: {remote: true} do |f| %>
+    <%= f.text_field :message, id:"message-area" %>
+    <%= f.submit "送信", class:"btn btn-dark btn-sm" %>
+    <%= f.hidden_field :room_id %>
   <% end %>
 </div>
-
-<div class="errors">
-  <%= render 'layouts/errors', obj:@chat %>
-</div>
-
-<%= form_with model:@chat, data: {remote: true} do |f| %>
-  <%= f.text_field :message, id:"message-area" %>
-  <%= f.submit "送信", class:"btn btn-dark btn-sm" %>
-  <%= f.hidden_field :room_id %>
-<% end %>

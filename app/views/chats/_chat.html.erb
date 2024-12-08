@@ -1,4 +1,4 @@
-<div class="right-container d-flex justify-contentn-end">
-  <p id="chat_<%= chat.id %>"><%= chat.message %></p>
-  <%= link_to '削除', chat_path(chat), method: :delete, data: {confirm: "本当に削除しますか？"}, class:'btn btn-danger btn-sm ml-2', remote: true, id:"delete_chat_#{chat.id}" %>
+<div class="right-container d-flex justify-content-end mb-2">
+  <p id="chat_<%= chat.id %>" class="bg-success" style="border-radius: 3px;"><%= chat.message %></p>
+  <%= link_to '削除', chat_path(chat), method: :delete, data: {confirm: "本当に削除しますか？"}, class:'btn btn-danger ml-2', remote: true, id:"delete_chat_#{chat.id}" %>
 </div>

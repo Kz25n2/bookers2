@@ -31,7 +31,8 @@
             
             <td id="comments_count">
               <%= render 'book_comments/comments_count', book: @book %>
-            <td>
+            </td>
+            <td>閲覧数: <%= @book.view_count %></td>
             <% if @book.user == current_user %>
               <td><%= link_to 'Edit', edit_book_path(@book.id), class:'d-grit gap-2 btn btn-success btn-sm' %></td>
               <td><%= link_to 'Destroy', book_path(@book.id), method: :delete, "data-confirm" => "本当に消しますか？", class:'d-grit gap-2 btn btn-danger btn-sm' %></td>

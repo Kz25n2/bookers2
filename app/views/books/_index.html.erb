@@ -6,6 +6,7 @@
       <th>Opinion</th>
       <th></th>
       <th></th>
+      <th></th>
     </tr>
   </thead>
 
@@ -24,6 +25,13 @@
             <%= render 'favorites/favorite', book:book %>
           </td>
           <td><%= render 'book_comments/comments_count', book:book %></td>
+          <td>
+            <% if book.view_count.present? %>
+              閲覧数: <%= book.view_count %>
+            <% else %>
+              閲覧数: 0
+            <% end %>
+          </td>
         </tr>
       <% end %>
     <% end %>

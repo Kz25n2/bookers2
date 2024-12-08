@@ -35,6 +35,7 @@ class BooksController < ApplicationController
     @users = User.all
     @user = current_user
     @book_comment = BookComment.new
+    @book.increment!(:view_count)
   end
 
   def edit
